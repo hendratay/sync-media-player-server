@@ -18,17 +18,17 @@ io.on('connection', function(socket) {
 
     socket.on('play', function(data) {
         console.log("Play");
-        io.emit('play', data);
+        socket.broadcast.emit('play', data);
     });
 
     socket.on('pause', function(data) {
         console.log("Pause");
-        io.emit('pause', data);
+        socket.broadcast.emit('pause', data);
     });
 
     socket.on('stop', function(data) {
         console.log("Stop");
-        io.emit('stop', data);
+        socket.broadcast.emit('stop', data);
     });
 
 });
