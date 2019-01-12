@@ -31,4 +31,14 @@ io.on('connection', function(socket) {
         socket.broadcast.emit('stop', data);
     });
 
+    socket.on('rewind', function(data) {
+        console.log("Rewind");
+        socket.broadcast.emit('rewind', data);
+    });
+
+    socket.on('fast_forward', function(data) {
+        console.log("Fast Forward");
+        socket.broadcast.emit('fast_forward', data);
+    });
+
 });
